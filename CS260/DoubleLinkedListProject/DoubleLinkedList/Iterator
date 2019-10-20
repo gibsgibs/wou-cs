@@ -1,0 +1,21 @@
+#ifndef DLLIST_ITERATOR_H
+#define DLLIST_ITERATOR_H
+#include "Node.h"
+
+template <class T>
+class Iterator
+{
+private:
+    Node<T>* node_iterator = NULL;
+public:
+    Iterator<T> operator++(void)
+    {
+        node_iterator = node_iterator->next;
+    }
+    Iterator<T> operator--(void)
+    {
+        node_iterator = node_iterator->prev;
+    }
+};
+
+#endif // DLLIST_ITERATOR_H
