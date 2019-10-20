@@ -8,6 +8,7 @@ Web_deploy.config
 *.docx
 *.xlsx
 *.pro.user
+*.pro
 *.exe
 *.pro.user.fbfeeac
 *.hpp
