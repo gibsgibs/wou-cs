@@ -1,0 +1,53 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>
+        CS460 HW4
+    </h1>
+    <h2>
+        ASP.NET MVC Project
+    </h2>
+    <p class="lead">
+        A very basic MVC project where we will demonstrate the use of GET and POST requests.
+    </p>
+    <p><a href="https://wou-cs46x-resources.netlify.com/cs460/hw/hw4" class="btn btn-primary btn-lg">The Assignment &raquo;</a></p>
+</div>
+<div class="container-fluid">
+    <div class="row">
+         <div class="col">
+             <div class="card">
+                 <div class="card-header">
+                     RGB Color Form
+                 </div><!--/card-header-->
+                 <div class="card-body">
+                     <p>
+                         Want to know what a particular RGB color looks like? How about it's web color format?
+                         Here you go. Uses query strings to send form data to the server, which reads them in the Request object.
+                         It then performs the calulation and formats the result in a view to return to you.
+                     </p>
+                     <div>
+                         @Html.ActionLink("Try it out", "RGBColor", "Home", null, new { @class = "btn btn-primary" })
+                     </div>
+                 </div><!--/card-body-->
+             </div><!--/card-->
+         </div><!--/col-->
+         <div class="col">
+             <div class="card">
+                 <div class="card-header">
+                     Color Interpolator Form
+                 </div><!--/card-header-->
+                 <div class="card-body">
+                     <p>
+                        Typical online color choosers are way to useful. We wanted something fun and completely useless.
+                         This form POST's the data to the server and uses parameter binding to make it easy.
+                     </p>
+                     <div>
+                         @Html.ActionLink("Try it out", "Create", "ColorInterpolator", null, new { @class = "btn btn-primary" })
+                     </div>
+                 </div><!--/card-body-->
+             </div><!--/card-->
+         </div><!--/col-->
+    </div><!--/row-->
+</div><!--/container-fluid--->

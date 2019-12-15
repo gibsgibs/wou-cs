@@ -1,0 +1,65 @@
+﻿@model FinalProject.Models.Event
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<div class="container-fluid pt-3">
+    <div class="row d-flex justify-content-center">
+        <div class="col-lg-8">
+            <div>
+                <dl class="dl-horizontal">
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Coordinator)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Person.FirstName) @Html.DisplayFor(model => model.Person.LastName)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Title)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Title)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Start)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Start)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Duration)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Duration)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Location)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Location)
+                    </dd>
+
+                </dl>
+            </div>
+            <div class="form-group d-flex m-0">
+                @Html.ActionLink("Back", "Index", null, new { @class = "btn btn-primary mr-auto" })
+            </div>
+            <div id="count"></div>
+        </div><!--/col-lg-8-->
+    </div><!--/row-->
+</div><!--/container-fluid-->
+<div id="EventID" hidden>@Html.DisplayFor(model => model.EventID)</div>
+@section scripts {
+    <script type="text/javascript" src="~/Scripts/main.js"></script>  
+}
+

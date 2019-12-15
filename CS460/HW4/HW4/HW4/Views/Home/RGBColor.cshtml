@@ -1,0 +1,79 @@
+﻿@{
+    ViewBag.Title = "RGB Color";
+}
+<h2>@ViewBag.Title</h2>
+<h5>
+    Input values between 0 and 255 into the text boxes, and watch the circle change colors!
+</h5>
+<div class="container-fluid">
+    <div class="row d-flex justify-content-center">
+        <div class="col-lg-4">
+            @using (Html.BeginForm("RGBColor", "Home", FormMethod.Get))
+            { 
+                <div class="form-group">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text" id="red"><div id="label">R</div></div>
+                        </div>
+                        @Html.TextBox("redValue", null, new 
+                        { 
+                            @class = "form-control", 
+                            type = "number", 
+                            min = "0", 
+                            max = "255", 
+                            required="required", 
+                            placeholder = @ViewBag.red})
+                    </div>
+                </div><!--/form-group-->
+                <div class="form-group">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text" id="green"><div id="label">G</div></div>
+                        </div>
+                        @Html.TextBox("greenValue", null, new 
+                        { 
+                            @class = "form-control", 
+                            type = "number", 
+                            min = "0", 
+                            max = "255", 
+                            required="required", 
+                            placeholder = @ViewBag.green })
+                    </div>
+                </div><!--/form-group-->
+                <div class="form-group">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text" id="blue"><div id="label">B</div></div>
+                        </div>
+                        @Html.TextBox("blueValue", null, new 
+                        { 
+                            @class = "form-control", 
+                            type = "number", 
+                            min = "0", 
+                            max = "255", 
+                            required="required", 
+                            placeholder = @ViewBag.blue })
+                    </div>
+                </div><!--/form-group-->
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary">
+                        Submit
+                    </button>
+                </div>
+            }
+        </div><!--/col-->
+        <div class="col-lg-4 text-center">
+            @if (ViewBag.success == true)
+            {
+                <div class="card">
+                    <div class="card-header">
+                        @ViewBag.hexValue
+                    </div><!--/card-header-->
+                    <div class="card-body">
+                        <div id="colorBox" class="mx-auto" style="background-color: @ViewBag.hexValue;"></div>
+                    </div><!--/card-body-->
+                </div><!--/card-->
+            }
+        </div><!--/col-->
+    </div><!--/row-->
+</div><!--/containter-fluid-->

@@ -1,0 +1,188 @@
+body {
+    font-family: 'Times New Roman', Times, serif; /* wanted a slightly less generic font */
+    background-color: #ffffff;
+    color: #000000;
+    margin: 0;
+}
+
+/* gives the element a shadowed apperance */
+.shadow {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.text-blue {
+    color: #80ced6;
+}
+
+/* ---------------- navbar ---------------- */
+.navbar {
+    margin: 0;
+    border: 0;
+    padding: 0;
+}
+
+.nav-border {
+    border-top: solid 1px;
+    border-color: #80ced6;
+}
+
+.navbar-brand{
+    color: #80ced6;
+    padding: 5px;
+    margin: 0%;
+    font-size: 22px;
+}
+
+.bg-gray {
+    background-color: #252525;
+}
+
+.btn-blue{
+    color: #80ced6;
+}
+
+.nav-item{
+    font-size: 18px;
+}
+
+.nav-link{
+    max-width: 120px;
+    color: #80ced6;
+}
+
+.navbar-nav a:hover, .navbar-toggler:hover {
+    color: #ffffff;
+}
+
+.active {
+    background-color: #151515;
+}
+
+.navbar-toggler:focus {
+    outline: 0;
+}
+/* ---------------------------------------- */
+
+/* - fixing the icon alignment/positions - */
+.oi {
+    padding-right: 3px;
+}
+
+.oi-home {
+    top: 0 !important;
+}
+
+.oi-envelope-closed {
+    top: 2px !important;
+}
+/* --------------------------------------- */
+
+/* ----------- jumbotron stuff ----------- */
+.jumbo-header {
+    font-size: 50px;
+}
+
+.jumbo-text {
+    font-size: 18px;
+}
+/* --------------------------------------- */
+
+/* ------------- card stuff ------------- */
+.card {
+    width: 450px;
+    margin: 10px;
+    border: solid 1px #80ced6;
+}
+
+.card-img-top 
+{
+    object-fit: cover;
+    height: 18rem;
+    border: none;
+}
+
+.card:hover {
+    outline: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(128,206,214,1);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(128,206,214,1);
+}
+
+.btn-outline-blue {
+    border: solid 1px;
+    border-color: #80ced6;
+    background-color: #ffffff;
+}
+
+.btn-outline-blue:hover {
+    background-color: #80ced6;
+}
+/* -------------------------------------- */
+
+/* -------------- table stuff -------------- */
+.thead-gray {
+    background-color: #252525;
+    color: #80ced6;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: #eeeeee;
+}
+
+.table-striped tbody tr:nth-of-type(even) {
+    background-color: #bbbbbb;
+}
+/* ----------------------------------------- */
+
+/* --------- Special ordered list --------- */
+ol#custom-ol {
+    counter-reset: ol-counter;
+}
+
+ol#custom-ol li {
+    position: relative;
+    list-style: none;
+}
+
+ol#custom-ol li::before {
+    counter-increment: ol-counter;
+    content: counter(ol-counter);
+    background-color: #252525;
+    color: #80ced6;
+    border: 2px solid #80ced6;
+    font-weight: bold;
+    position: absolute;
+    left: -28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    box-sizing: border-box;
+}
+/* ---------------------------------------- */
+
+ul#custom-ul li {
+    position: relative;
+    list-style: none;
+}
+
+ul#custom-ul li::before {
+    content: ' ';
+    background-color: #252525;
+    border: 2px solid #80ced6;
+    position: absolute;
+    left: -20.5px;
+    top: 3px;
+    display: flex;
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    box-sizing: border-box;
+}
+
+div#footer {
+    text-align: center;
+    bottom: 0;
+    padding: 20px;
+}

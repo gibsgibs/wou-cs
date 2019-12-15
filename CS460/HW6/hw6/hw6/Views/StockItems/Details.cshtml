@@ -1,0 +1,212 @@
+﻿@using hw6.Models.ViewModels
+@model hw6.Models.ViewModels.DetailsViewModel
+
+<div class="container-fluid">
+    <div class="row">
+        <div id="cardCol" class="col-lg-6">
+            <div class="card h-100 shadow">
+                <div class="card-header text-white bg-dark h3">
+                    Stock Item
+                </div><!--/card-header-->
+                <div class="card-body">
+                    <div>
+                        @if (Model.Photo != null)
+                        {
+                            @Html.DisplayFor(model => model.Photo)
+                        }
+                        else
+                        {
+                            <div id ="imagePlaceholder" class="text-center rounded border border-dark">
+                                <span class="fas fa-image pt-4 pb-4"><br />
+                                    No Image Available
+                                </span>
+                            </div>
+                        }
+                    </div>
+                    <dl class="row">
+                        <dt class="col-sm-4 text-left">
+                            @Html.DisplayNameFor(model => model.StockItemName)
+                        </dt><!--/col-->
+                        <dd class="col-sm-8 text-left">
+                            @Html.DisplayFor(model => model.StockItemName)
+                        </dd><!--/col-->
+                        @if (Model.Size != null)
+                        {
+                            <dt class="col-sm-4 text-left">
+                                @Html.DisplayNameFor(model => model.Size)
+                            </dt><!--/col-->
+                            <dd class="col-sm-8 text-left">
+                                @Html.DisplayFor(model => model.Size)
+                            </dd><!--/col-->
+                        }
+                        <dt class="col-sm-4 text-left">
+                            @Html.DisplayNameFor(model => model.RecommendedRetailPrice)
+                        </dt><!--/col-->
+                        <dd class="col-sm-8 text-left">
+                            @Html.DisplayFor(model => model.RecommendedRetailPrice)
+                        </dd><!--/col-->
+                        <dt class="col-sm-4 text-left">
+                            @Html.DisplayNameFor(model => model.TypicalWeightPerUnit)
+                        </dt><!--/col-->
+                        <dd class="col-sm-8 text-left">
+                            @Html.DisplayFor(model => model.TypicalWeightPerUnit)
+                        </dd><!--/col-->
+                        <dt class="col-sm-4 text-left">
+                            @Html.DisplayNameFor(model => model.LeadTimeDays)
+                        </dt><!--/col-->
+                        <dd class="col-sm-8 text-left">
+                            @Html.DisplayFor(model => model.LeadTimeDays)
+                        </dd><!--/col-->
+                        <dt class="col-sm-4 text-left">
+                            @Html.DisplayNameFor(model => model.ValidFrom)
+                        </dt><!--/col-->
+                        <dd class="col-sm-8 text-left">
+                            @Html.DisplayFor(model => model.ValidFrom)
+                        </dd><!--/col-->
+                        <dt class="col-sm-4 text-left">
+                            @Html.DisplayNameFor(model => model.CountryOfOrigin)
+                        </dt><!--/col-->
+                        <dd class="col-sm-8 text-left">
+                            @Html.DisplayFor(model => model.CountryOfOrigin)
+                        </dd><!--/col-->
+                        @if (Model.Tags != "")
+                        {
+                            <dt class="col-sm-4 text-left">
+                                @Html.DisplayNameFor(model => model.Tags)
+                            </dt><!--/col-->
+                            <dd class="col-sm-8 text-left">
+                                @Html.DisplayFor(model => model.Tags)
+                            </dd><!--/col-->
+                        }
+                    </dl><!--/row-->
+                </div><!--/card-body-->
+            </div><!--/card-1-->
+        </div><!--/col-->
+        <div id="cardCol" class="col-lg-6">
+            <div id="tableCard" class="card h-100 shadow">
+                <div class="card-header text-white bg-dark h3">
+                    Top Purchasers
+                </div><!--/card-header-->
+                <div id="tableCardBody" class="card-body">
+                    @if (Model.TopCustomersByOrder != null)
+                    {
+                        <table id="topPurchasers" class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.TopCustomersByOrder)
+                                    </th>
+                                    <th id="orders">
+                                        Total Orders
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model.TopCustomersByOrder)
+                                {
+                                    <tr>
+                                        <td>
+                                            @item.Item1
+                                        </td>
+                                        <td id="orders">
+                                            @item.Item2
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    }
+                </div><!--/card-body-->
+            </div><!--/card-2-->
+        </div><!--/col-->
+    </div><!--/row-->
+    <div class="row">
+        <div id="cardCol" class="col-lg-6">
+            <div class="card h-100 shadow">
+                <div class="card-header text-white bg-dark h3">
+                    Supplier Profile
+                </div><!--/card-header-->
+                <div class="card-body">
+                    <dl class="row">
+                        <dt class="col-sm-4 text-left">
+                            @Html.DisplayNameFor(model => model.SupplierName)
+                        </dt><!--/col-->
+                        <dd class="col-sm-8 text-left">
+                            @Html.DisplayFor(model => model.SupplierName)
+                        </dd><!--/col-->
+                        <dt class="col-sm-4 text-left">
+                            @Html.DisplayNameFor(model => model.SupplierPhoneNumber)
+                        </dt><!--/col-->
+                        <dd class="col-sm-8 text-left">
+                            @Html.DisplayFor(model => model.SupplierPhoneNumber)
+                        </dd><!--/col-->
+                        <dt class="col-sm-4 text-left">
+                            @Html.DisplayNameFor(model => model.SupplierFaxNumber)
+                        </dt><!--/col-->
+                        <dd class="col-sm-8 text-left">
+                            @Html.DisplayFor(model => model.SupplierFaxNumber)
+                        </dd><!--/col-->
+                        <dt class="col-sm-4 text-left">
+                            @Html.DisplayNameFor(model => model.SupplierWebsiteURL)
+                        </dt><!--/col-->
+                        <dd class="col-sm-8 text-left">
+                            <a href=@Html.DisplayFor(model => model.SupplierWebsiteURL)>
+                                @Html.DisplayFor(model => model.SupplierWebsiteURL)
+                            </a>
+                        </dd><!--/col-->
+                        @if (Model.SupplierContact != "")
+                        {
+                            <dt class="col-sm-4 text-left">
+                                @Html.DisplayNameFor(model => model.SupplierContact)
+                            </dt><!--/col-->
+                            <dd class="col-sm-8 text-left">
+                                @Html.DisplayFor(model => model.SupplierContact)
+                            </dd><!--/col-->
+                        }
+                    </dl><!--/row-->
+                </div><!--/card-body-->
+            </div><!--/card-3-->
+        </div><!--/col-->
+        <div id="cardCol" class="col-lg-6">
+            <div class="card h-100 shadow">
+                <div class="card-header text-white bg-dark h3">
+                    Sales History Summary
+                </div><!--/card-header-->
+                <div class="card-body">
+                    <dl class="row">
+                        <dt class="col-sm-4 text-left">
+                            @Html.DisplayNameFor(model => model.Orders)
+                        </dt><!--/col-->
+                        <dd class="col-sm-8 text-left">
+                            @Html.DisplayFor(model => model.Orders)
+                        </dd><!--/col-->
+                        <dt class="col-sm-4 text-left">
+                            @Html.DisplayNameFor(model => model.GrossSales)
+                        </dt><!--/col-->
+                        <dd class="col-sm-8 text-left">
+                            @Html.DisplayFor(model => model.GrossSales)
+                        </dd><!--/col-->
+                        <dt class="col-sm-4 text-left">
+                            @Html.DisplayNameFor(model => model.GrossProfit)
+                        </dt><!--/col-->
+                        <dd class="col-sm-8 text-left">
+                            @Html.DisplayFor(model => model.GrossProfit)
+                        </dd><!--/col-->
+                    </dl><!--/row-->
+                </div><!--/card-body-->
+            </div><!--/card-4-->
+        </div><!--/col-->
+    </div><!--/row-->
+    <div class="row d-flex justify-content-center">
+        <div id="cardCol" class="col-lg-6">
+            <div class="card shadow">
+                <div class="card-header text-white bg-dark h3">
+                    Supplier Location
+                </div><!--/card-header-->
+                <div id="mapCardBody" class="card-body">
+                    <iframe id="map" frameborder="0" src="https://www.google.com/maps/embed/v1/place?key=@Html.DisplayFor(model => model.Key)&q=@Html.DisplayFor(model => model.Location.Item1),@Html.DisplayFor(model => model.Location.Item2)"></iframe>
+                </div><!--/card-body-->
+            </div><!--/card-4-->
+        </div><!--/col-->
+    </div><!--/row-->
+</div><!--/container-fluid-->

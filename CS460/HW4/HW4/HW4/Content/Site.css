@@ -1,0 +1,38 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+    padding: 15px;
+}
+
+
+div#colorBox {
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    border: solid 1px #000000;
+}
+
+
+div#label {
+    width: 20px;
+}
+
+.input-group-text {
+    font-weight: bold;
+    text-shadow: #000000 1px 1px 1px;
+}
+div#red {
+    color: #ff0000;
+}
+div#green {
+    color: #00ff00;
+}
+div#blue {
+    color: #0000ff;
+}

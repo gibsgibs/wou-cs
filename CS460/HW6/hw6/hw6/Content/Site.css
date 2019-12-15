@@ -1,0 +1,76 @@
+﻿body {
+    padding-bottom: 20px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.body-content {
+    padding: 0;
+}
+
+.form-group {
+    width: 1000px;
+}
+
+table#searchResults {
+    width: 1500px;
+}
+.jumbo-header {
+    font-size: 50px;
+}
+
+div#cardCol {
+    padding: 15px;
+}
+
+footer {
+    padding-left: 15px;
+}
+
+#imagePlaceholder {
+   width: 150px;
+   height: 100px;
+   vertical-align: middle !important;
+}
+
+/* gives the element a shadowed apperance */
+.shadow {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#map {
+    width: 100%;
+}
+
+@media only screen and (max-width: 768px) {
+    #map {
+        height: 100%;
+    }
+}
+@media only screen and (min-width: 768px) {
+    #map {
+        height: 300px;
+    }
+}
+
+#topPurchasers {
+    display: block;
+    width: 100%;
+}
+#topPurchasers th {
+    width: 1%;
+}
+#topPurchasers td {
+    width: 1%;
+}
+#topPurchasers tr {
+    width: 10%;
+}
+#topPurchasers tbody {
+    display:block;
+    overflow :auto;
+    height: 250px;
+}
+
+#mapCardBody {
+    padding: 1px;
+}

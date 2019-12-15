@@ -1,0 +1,89 @@
+﻿@model hw8.Models.Athlete
+@{
+    ViewBag.Title = "Graph";
+}
+
+<div class="container-fluid pt-5">
+    <div class="row d-flex justify-content-center">
+        <div class="col-lg-8">
+            <div class="card shadow">
+                <div class="card-header text-center text-light bg-dark py-2">
+                    <h5 class="m-0">
+                        Select a Team, Athlete and Event
+                    </h5>
+                </div>
+                <div class="card-body d-flex justify-content-center">
+                    <form id="graphForm" class="container-fluid p-0">
+                        <div class="row">
+                            <div class="col">
+                                <div id="teamsGroup" class="form-group">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <div class="input-group-text text-light bg-dark">
+                                                @Html.LabelFor(model => model.Team.Name, new
+                                                {
+                                                    id = "inputLabel"
+                                                })
+                                            </div>
+                                        </div>
+                                        @Html.DropDownList("TeamID", null, "Select", htmlAttributes: new
+                                        {
+                                            @class = "form-control",
+                                            id = "listOfTeams"
+                                        })
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <div class="input-group-text text-light bg-dark">
+                                                @Html.LabelFor(model => model.Person.Name, new
+                                                {
+                                                    id = "inputLabel"
+                                                })
+                                            </div>
+                                        </div>
+                                        <select class="form-control" id="listOfAthletes">
+                                            <option selected value="null">
+                                                Select
+                                            </option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <div class="input-group-text text-light bg-dark">
+                                                @Html.LabelFor(model => model.Results.First().Event.Name, new
+                                                {
+                                                    id = "inputLabel"
+                                                })
+                                            </div>
+                                        </div>
+                                        <select class="form-control" id="listOfEvents">
+                                            <option selected value="null">
+                                                Select
+                                            </option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group m-0 d-flex">
+                                    @Html.ActionLink("Home", "Index", "Home", null, new
+                                    {
+                                        @class = "btn btn-primary mr-auto"
+                                    })
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div id="thePlot" class="shadow mt-4"></div>
+        </div>
+    </div>
+</div>
+    
+@section scripts {
+    <script type="text/javascript" src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/Graph.js"></script>
+}

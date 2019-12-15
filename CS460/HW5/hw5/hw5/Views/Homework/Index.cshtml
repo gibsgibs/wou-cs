@@ -1,0 +1,61 @@
+﻿@model IEnumerable<hw5.Models.Homework>
+
+<div class="h2 text-center my-3">
+    Homework Assignments
+</div>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Department)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CourseNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DueDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DueTime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ItemPriority)
+        </th>
+        <th>
+
+        </th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Department)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CourseNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DueDateAsString)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DueTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ItemPriority)
+            </td>
+            <td>
+                @Html.ActionLink("Details", "Details", new { id = item.ID }, new
+                {
+                    @class = "btn btn-outline-primary"
+                })
+            </td>
+        </tr>
+    }
+</table>

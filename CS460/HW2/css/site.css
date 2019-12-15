@@ -1,0 +1,82 @@
+body {
+    font-family: 'Times New Roman', Times, serif; /* wanted a slightly less generic font */
+    background-color: #ffffff;
+    color: #000000;
+    margin: 0;
+}
+
+.form-control {
+    margin-bottom: 5px !important;
+}
+
+div#border {
+    height: 1px;
+    background-image: radial-gradient(#80ced6, #ffffff);
+    margin-bottom: 10px;
+}
+
+.text-blue {
+    color: #80ced6;
+}
+
+.bg-gray {
+    background-color: #252525;
+}
+
+.btn-blue{
+    color: #80ced6;
+}
+/* ----------- jumbotron stuff ----------- */
+.jumbo-header {
+    font-size: 50px;
+}
+
+.jumbo-text {
+    font-size: 18px;
+}
+/* --------------------------------------- */
+
+/* ------------- card stuff ------------- */
+.card {
+    width: 450px;
+    margin: 10px;
+    border: solid 1px #80ced6;
+}
+
+.card-img-top 
+{
+    object-fit: cover;
+    height: 18rem;
+    border: none;
+}
+
+.card:hover {
+    outline: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(128,206,214,1);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(128,206,214,1);
+}
+
+.btn-outline-blue {
+    border: solid 1px;
+    border-color: #80ced6;
+    background-color: #ffffff;
+}
+
+.btn-outline-blue:hover {
+    background-color: #80ced6;
+}
+/* -------------------------------------- */
+/* -------------- table stuff -------------- */
+.thead-gray {
+    background-color: #252525;
+    color: #80ced6;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: #eeeeee;
+}
+
+.table-striped tbody tr:nth-of-type(even) {
+    background-color: #bbbbbb;
+}
+/* ----------------------------------------- */
