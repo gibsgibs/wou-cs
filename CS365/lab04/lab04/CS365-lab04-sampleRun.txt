@@ -1,0 +1,35 @@
+C:\Users\Gabriel\Desktop\CS365-repo\lab-4-gibsgibs\lab04\lab04>
+Program 3 20 30 300
+Customer 1 arrived at 1.
+Customer 1 is starting to be served at 1.
+Customer 2 arrived at 3.
+Customer 2 is starting to be served at 3.
+Customer 3 arrived at 4.
+Customer 3 is starting to be served at 4.
+Customer 1 is leaving at 5.
+Customer 3 is leaving at 5.
+Customer 4 arrived at 6.
+Customer 4 is starting to be served at 6.
+Customer 5 arrived at 8.
+Customer 5 is starting to be served at 8.
+Customer 2 is leaving at 10.
+Customer 6 arrived at 13.
+Customer 6 is starting to be served at 13.
+Customer 5 is leaving at 13.
+Customer 4 is leaving at 15.
+Customer 6 is leaving at 16.
+Customer 7 arrived at 20.
+Customer 7 is starting to be served at 20.
+Customer 7 arrived at 24.
+Customer 7 is starting to be served at 24.
+Customer 7 is leaving at 25.
+Customer 9 arrived at 28.
+Customer 9 is starting to be served at 28.
+Customer 7 is leaving at 28.
+Customer 10 arrived at 29.
+Customer 10 is starting to be served at 29.
+Customer 9 is leaving at 29.
+Customer 10 is leaving at 30.
+Average waiting time was 13.6 for 10 customers.
+
+C:\Users\Gabriel\Desktop\CS365-repo\lab-4-gibsgibs\lab04\lab04>
