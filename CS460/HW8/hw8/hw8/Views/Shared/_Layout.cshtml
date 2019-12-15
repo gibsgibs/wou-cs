@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - CS460 HW8</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <nav class="navbar navbar-expand-sm navbar-dark fixed-top bg-dark">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <span id="navLogo" class="navbar-brand font-weight-bold">TTT</span>
+            <div class="navbar-collapse collapse" id="navbarSupportedContent">
+
+                <ul class="nav navbar-nav mr-auto">
+                    <li class="nav-item">@Html.ActionLink("Home", "Index", "Home", null, new { @class = "nav-link" })</li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-item dropdown-toggle nav-link" data-toggle="dropdown">
+                            Add New
+                        </a>
+                        <div class="dropdown-menu bg-dark" >
+                            @Html.ActionLink("Athlete", "CreateAthlete", "Home", null, new { @class = "dropdown-item text-light" })
+                            @Html.ActionLink("Meet", "CreateMeet", "Home", null, new { @class = "dropdown-item text-light" })
+                            @Html.ActionLink("Result", "CreateResult", "Home", null, new { @class = "dropdown-item text-light" })
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-item dropdown-toggle nav-link" data-toggle="dropdown">
+                            Statistics
+                        </a>
+                        <div class="dropdown-menu bg-dark">
+                            @Html.ActionLink("Table", "Index", "Athletes", null, new { @class = "dropdown-item text-light" })
+                            @Html.ActionLink("Graph", "Graph", "Athletes", null, new { @class = "dropdown-item text-light" })
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container-fluid body-content p-0">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - Gabriel Brehm</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

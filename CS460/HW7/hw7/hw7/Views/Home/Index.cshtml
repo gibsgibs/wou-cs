@@ -1,0 +1,81 @@
+﻿@model hw7.Models.GithubUser
+
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col d-flex justify-content-center">
+            <div class="card justify-content-center flex-row flex-wrap border-dark bg-dark text-light m-5">
+                <div class="card-header border-0 bg-transparent p-3">
+                    <img class="rounded-circle" src=@Html.DisplayFor(m => m.avatarUrl) />
+                </div><!--/card-header-->
+                <div class="card-block my-auto p-3">
+                    <h1>
+                        <a id="link" class="text-light" href=@Html.DisplayFor(m => m.homepage)>@Html.DisplayFor(m => m.name)</a>
+                    </h1>
+                    <h5>
+                        @Html.DisplayFor(m => m.userName)
+                    </h5>
+                    <h5>
+                        @Html.DisplayFor(m => m.location)
+                    </h5>
+                    <h5>
+                        @Html.DisplayFor(m => m.bio)
+                    </h5>
+                </div><!--/card-block-->
+            </div><!--/card-->
+        </div><!--/col-->
+    </div><!--/row-->
+    <div class="row d-flex justify-content-center">
+        <div class="col-10">
+            <div class="row">
+                @foreach (var item in Model.githubRepos)
+                {
+                    <div class="col-lg-4 m-0 p-3">
+                        <div class="card shadow my-3 h-100">
+                            <div class="card-header bg-danger font-weight-bolder text-light border-0 mw-50">
+                                <h4>
+                                    <a id="link" class="text-light" href=@item.repoPage>@item.repoName</a>
+                                </h4>
+                            </div>
+                            <div class="card-body bg-dark text-light rounded-bottom">
+                                <div class="row">
+                                    <div class="col d-flex justify-content-center pb-2">
+                                        <img id="avatarBox" class="border border-danger rounded-circle" src=@item.ownerAvatarLink />
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xl-12">
+                                        <h4>
+                                            @Html.DisplayNameFor(m => m.githubRepos[0].ownerName): @item.ownerName
+                                        </h4>
+                                        <h5>
+                                            @item.timeSinceLastCommit
+                                        </h5>
+                                    </div>
+                                    </div>
+                                <div class="row">
+                                    <div class="col-xl-12 d-flex justify-content-end">
+                                        <button class="btn btn-danger" onclick="GetCommits('@item.ownerName', '@item.repoName')" type="submit">
+                                            Commits
+                                        </button>
+                                    </div>
+                                </div>
+                            </div><!--/card-body-->
+                        </div><!--/card-->
+                    </div><!--/col-4-->
+                }
+            </div><!--/row-->
+        </div><!--/col-10-->
+    </div><!--/row-->
+    <div class="row d-flex justify-content-center">
+        <div id="commits" class="col-10">
+
+        </div><!--/col-10-->
+    </div><!--/row-->
+</div><!--/container-fluid-->
+
+@section scripts
+{
+    <script type="text/javascript" src="~/Scripts/main.js"></script>
+}
+

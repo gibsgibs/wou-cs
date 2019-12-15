@@ -1,0 +1,51 @@
+﻿@model IEnumerable<FinalProject.Models.Event>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="container-fluid pt-3">
+    <div class="row d-flex justify-content-center">
+        <div class="col-lg-8">
+            <table class="table table-lg-responsive">
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Title)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Start)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Coordinator)
+                    </th>
+                    <th></th>
+                </tr>
+
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Title)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Start)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Person.FirstName) @Html.DisplayFor(modelItem => item.Person.LastName)
+                        </td>
+                        <td>
+                            @Html.ActionLink("Edit", "Edit", new { id = item.EventID }) |
+                            @Html.ActionLink("Details", "Details", new { id = item.EventID }) |
+                            @Html.ActionLink("Delete", "Delete", new { id = item.EventID })
+                        </td>
+                    </tr>
+                }
+
+            </table>
+            @Html.ActionLink("Create New", "Create", null, new
+            {
+                @class = "btn btn-primary"
+            })
+        </div><!--/col-lg-8-->
+    </div><!--/row-->
+</div><!--/container-fluid-->

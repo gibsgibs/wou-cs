@@ -1,0 +1,18 @@
+﻿body {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+}
+
+/* gives the element a shadowed apperance */
+.shadow {
+    box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#avatarBox {
+    width: 150px;
+    height: 150px;
+}
+
+#link:hover
+{
+    text-decoration: none;
+}

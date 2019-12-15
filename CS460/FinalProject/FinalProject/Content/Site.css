@@ -1,0 +1,34 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* ----- Jumbotron ----- */
+.jumbo-header {
+    font-size: 30px;
+    font-family: 'Copperplate Gothic';
+}
+.jumbo-text {
+    font-size: 25px;
+}
+
+.field-validation-error {
+    color: #f00000;
+}
+
+.field-validation-valid {
+    display: none;
+}
+
+.input-validation-error {
+    border: 1px solid #f00000;
+    background-color: #f0e0e0;
+}
+
+.validation-summary-errors {
+    display: none;
+}
+
+.validation-summary-valid {
+    display: none;
+}

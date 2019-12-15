@@ -1,0 +1,84 @@
+﻿@model hw5.Models.Homework
+
+<div class="h2 text-center my-3">
+    Details
+</div>
+
+<div class=container-fluid>
+    <div class="row d-flex justify-content-center">
+        <div class="col-lg-8">
+            <div class="card">
+                <div class="card-header text-center">
+                    @Html.DisplayFor(model => model.Title)
+                </div><!--/card-header-->
+                <div class="card-body d-flex justify-content-center">
+                    <div class="container-fluid">
+                        <div class="row text-center">
+                            <div class="col-md-4">
+                                <dl>
+                                    <dt>
+                                        Class
+                                    </dt>
+                                    <dd>
+                                        @Html.DisplayFor(model => model.Department)@Html.DisplayFor(model => model.CourseNumber)
+                                    </dd>
+                                </dl>
+                            </div><!--/col-->
+                            <div class="col-md-4">
+                                <dl>
+                                    <dt>
+                                        @Html.DisplayNameFor(model => model.DueDate)
+                                    </dt>
+                                    <dd>
+                                        @Html.DisplayFor(model => model.DueDateAsString) at @Html.DisplayFor(model => model.DueTime)
+                                    </dd>
+                                </dl>
+                            </div><!--/col-->
+                            <div class="col-md-4">
+                                <dl>
+                                    <dt>
+                                        @Html.DisplayNameFor(model => model.ItemPriority)
+                                    </dt>
+                                    <dd>
+                                        @Html.DisplayFor(model => model.ItemPriority)
+                                    </dd>
+                                </dl>
+                            </div><!--/col-->
+                        </div>
+                        @if (Model.Notes != null)
+                        {
+                            <div class="row">
+                                <div class="col">
+                                    <dl>
+                                        <dt>
+                                            @Html.DisplayNameFor(model => model.Notes)
+                                        </dt>
+                                        <dd>
+                                            @Html.DisplayFor(model => model.Notes)
+                                        </dd>
+                                    </dl>
+                                </div><!--/col-->
+                            </div><!--/row-->
+                        }
+                        <div class="row">
+                            <div class="col text-center">
+                                <strong>
+                                    @Html.DisplayFor(model => model.TimeLeft)
+                                </strong>
+                            </div><!--/col-->
+                        </div><!--/row-->
+                        <div class="row d-flex justify-content-center">
+                            <div class="col-xs-3 text-center">
+                                @Html.ActionLink("Delete", "Delete", new { id = Model.ID }, new
+                                {
+                                    @class = "btn btn-outline-danger",
+                                    id = "button",
+                                })
+                            </div><!--/col-->
+                        </div><!--/row-->
+                    </div><!--/container-fluid-->
+                </div><!--/card-body-->
+            </div><!--/card-->
+        </div><!--/col-->
+    </div><!--/row-->
+</div><!--/container-fluid-->

@@ -1,0 +1,40 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+
+#inputLabel {
+    width: 110px;
+    margin: 0;
+}
+
+.card {
+    margin-top: 20px;
+}
+
+.field-validation-error {
+    color: #f00000;
+}
+
+.field-validation-valid {
+    display: none;
+}
+
+.input-validation-error {
+    border: 1px solid #f00000;
+    background-color: #f0e0e0;
+}
+
+.validation-summary-errors {
+    display: none;
+}
+
+.validation-summary-valid {
+    display: none;
+}
+
+#button {
+    width: 100px;
+    margin: 5px;
+}

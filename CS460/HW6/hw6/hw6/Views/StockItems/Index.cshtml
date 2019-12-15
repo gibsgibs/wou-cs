@@ -1,0 +1,65 @@
+﻿@model IEnumerable<hw6.Models.StockItem>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col">
+            @using (Html.BeginForm("Index", "StockItems", FormMethod.Get, new { @class = "container-fluid d-flex justify-content-center" }))
+            {
+                <div class="form-group">
+                    <div class="input-group">
+                        <input type="text" name="userSearch" class="form-control" />
+                        <div class="input-group-append">
+                            <button id="button" type="submit" class="btn btn-primary">
+                                Search
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div><!--/col-->
+    </div><!--/row-->
+    <div class="row">
+        <div class="col d-flex justify-content-center">
+            @if (Model != null && Model.Count() > 0)
+            {
+                <table id="searchResults" class="table">
+                    <tr> 
+                        <th class="w-100">
+                            Item Name
+                        </th>
+                        <th>
+
+                        </th>
+                    </tr>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @item.StockItemName
+                            </td>
+                            <td class="text-center">
+                                @Html.ActionLink("Details", "Details", new { id = item.StockItemID }, new
+                                {
+                                    @class = "btn btn-outline-primary"
+                                })
+                            </td>
+                        </tr>
+                    }
+                </table>
+            }
+            else
+            {
+                if (ViewBag.success == false)
+                {
+                    <div class="row">
+                        <div class="col">
+                            <p class="h4">
+                                Whoops! Your search had no results
+                            </p>
+                        </div><!--/col-->
+                    </div><!--/row-->
+                }
+            }
+        </div><!--/col-->
+    </div><!--/row-->
+</div><!--/container-fluid-->

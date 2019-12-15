@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Home</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="../css/site.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/open-iconic/1.1.1/font/css/open-iconic-bootstrap.min.css">
+    </head>
+    <body>
+        <div class="jumbotron jumbotron-fluid text-center">
+            <div class="container-fluid">
+            <h1 class="jumbo-header d-flex justify-content-center">
+                Geozone Mineral Identifier
+            </h1>
+            <p class="jumbo-text lead d-flex justify-content-center">
+                It is pretty self explanatory
+            </p>
+            </div><!--/container-->
+        </div><!--/jumbotron-->
+        <div class="container-fluid">
+            <div class="row d-flex justify-content-center">
+                <div id="form-col" class="col-lg-6">
+                    <div class="card mx-auto w-100">
+                        <div class="card-header text-blue text-center bg-gray">
+                            Identify a mineral
+                        </div><!--/card-header-->
+                        <div class="card-body">
+                            <form id="form">
+                                <div class="form-group row d-flex justify-content-center">
+                                    <div class="col">
+                                        <div class="row">
+                                            <div class="col">
+                                                <label class="h5">
+                                                    Min Hardness
+                                                </label>
+                                                <div id="border"></div>
+                                                <input class="form-control" type="number" name="min-hardness" id="min-hardness" placeholder="1..." min="1" max="10">
+                                            </div><!--/col-->
+                                            <div class="col">
+                                                <label class="h5">
+                                                    Max Hardness
+                                                </label>
+                                                <div id="border"></div>
+                                                <input class="form-control" type="number" name="max-hardness" id="max-hardness" placeholder="10..." min="1" max="10">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div><!--/form-group-->
+                                <div class="form-group row d-flex justify-content-center">
+                                    <div class="col">
+                                        <label class="h5">
+                                            Luster
+                                        </label>
+                                        <div id="border"></div>
+                                        <div class="row d-flex">
+                                            <div class="col-sm-4">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" id="luster1" name="luster" value="Vitreous">
+                                                    <label class="form-check-label" for="luster1">
+                                                        Vitreous
+                                                    </label>
+                                                </div><!--/form-check-->
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" id="luster2" name="luster" value="Adamantine">
+                                                    <label class="form-check-label" for="luster2">
+                                                        Adamantine
+                                                    </label>
+                                                </div><!--/form-check-->
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" id="luster3" name="luster" value="Pearly">
+                                                    <label class="form-check-label" for="luster3">
+                                                        Pearly
+                                                    </label>
+                                                </div><!--/form-check-->
+                                            </div><!--/col-->
+                                            <div class="col-sm-4">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" id="luster4" name="luster" value="Waxy">
+                                                    <label class="form-check-label" for="luster4">
+                                                        Waxy
+                                                    </label>
+                                                </div><!--/form-check-->
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" id="luster5" name="luster" value="Greasy">
+                                                    <label class="form-check-label" for="luster5">
+                                                        Greasy
+                                                    </label>
+                                                </div><!--/form-check-->
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" id="luster6" name="luster" value="Dull">
+                                                    <label class="form-check-label" for="luster6">
+                                                        Dull
+                                                    </label>
+                                                </div><!--/form-check-->
+                                            </div><!--/col-->
+                                            <div class="col-sm-4">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" id="luster7" name="luster" value="Silky">
+                                                    <label class="form-check-label" for="luster7">
+                                                        Silky
+                                                    </label>
+                                                </div><!--/form-check-->
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" id="luster8" name="luster" value="Earthy">
+                                                    <label class="form-check-label" for="luster8">
+                                                        Earthy
+                                                    </label>
+                                                </div><!--/form-check-->
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" id="luster9" name="luster" value="Any">
+                                                    <label class="form-check-label" for="luster9">
+                                                        Any
+                                                    </label>
+                                                </div><!--/form-check-->
+                                            </div><!--/col-->
+                                        </div><!--/row-->
+                                    </div><!--/col-->
+                                </div><!--/row-->
+                                <div class="form-group row">
+                                    <div class="col-md-6 d-flex">
+                                        <button id="submitButton" class="btn btn-outline-blue mr-auto" type="submit">Submit</button>
+                                    </div><!--/col-->
+                                    <div class="col-md-6 d-flex">
+                                        <button id="resetButton" class="btn btn-outline-blue ml-auto" type="button">Reset</button>
+                                    </div><!--/col-->
+                                </div><!--/row-->
+                            </form>
+                        </div><!--card-body-->
+                    </div><!--/card-->
+                </div><!--/col-->
+            </div><!--/row-->
+            <div class="row d-flex justify-content-center">
+                <div class="col-md-6">
+                    <div id="resultTable" class="table-responsive" hidden>
+                        <table class="table table-striped">
+                            <thead class="thead-gray">
+                                <tr>
+                                    <th class="w-25" scope="col">
+                                        Name
+                                    </th>
+                                    <th class="w-25" scope="col">
+                                        Hardness
+                                    </th>
+                                    <th class="w-25" scope="col">
+                                        Luster
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody id="resultTableBody"></tbody>
+                        </table><!--/table-->
+                    </div><!--/table-responsive--> 
+                    <div id="error" class="container-fluid text-center" hidden>
+                            <h5>
+                                Whoops!
+                            </h5>
+                            <p>
+                                Looks like no minerals matched your search
+                            </p>
+                    </div>
+                </div><!--/col-->
+            </div><!--/row-->
+        </div><!--/container-fluid-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+        <script src="../js/hw2.js"></script>
+    </body>
+</html>
+        

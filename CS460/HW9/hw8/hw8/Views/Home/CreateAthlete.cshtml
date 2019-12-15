@@ -1,0 +1,105 @@
+﻿@using hw8.Models
+@using hw8.Models.ViewModels
+@model hw8.Models.ViewModels.AthleteViewModel
+
+@{
+    ViewBag.Title = "Add Athlete";
+}
+
+<div class="container-fluid pt-5">
+    <div class="row d-flex justify-content-center">
+        <div class="col-lg-8">
+            @if (ViewBag.PersonError == true)
+            {
+                <h3 class="text-danger text-center py-3">
+                    That person already exists in the Database.
+                </h3>
+            }
+            else if (ViewBag.Error == false)
+            {
+                <h3 class="text-success text-center py-3">
+                    Your entry was added to the system!
+                </h3>
+            }
+            <div class="card shadow">
+                <div class="card-header text-center text-light bg-dark py-2">
+                    <h5 class="m-0">
+                        Add a New Athelete
+                    </h5>
+                </div>
+                <div class="card-body d-flex justify-content-center">
+                    @using (Html.BeginForm("CreateAthlete", "Home", FormMethod.Post, new { @class = "container-fluid p-0" }))
+                    {
+                        @Html.AntiForgeryToken()
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        <div class="form-group">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text text-light bg-dark">
+                                        @Html.LabelFor(model => model.AthleteName, htmlAttributes: new
+                                        {
+                                            id = "inputLabel"
+                                        })
+                                    </div>
+                                </div>
+                                @Html.EditorFor(model => model.AthleteName, new
+                                {
+                                    htmlAttributes = new
+                                    {
+                                        @class = "form-control"
+                                    }
+                                })
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <div class="input-group-text text-light bg-dark">
+                                                @Html.LabelFor(model => model.TeamName, htmlAttributes: new
+                                                {
+                                                    id = "inputLabel"
+                                                })
+                                            </div>
+                                        </div>
+                                        @Html.DropDownList("TeamName", null, htmlAttributes: new { @class = "form-control" })
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <div class="input-group-text text-light bg-dark">
+                                                @Html.LabelFor(model => model.Gender, htmlAttributes: new
+                                                {
+                                                    id = "inputLabel"
+                                                })
+                                            </div>
+                                        </div>
+                                        @Html.DropDownListFor(model => model.Gender, new SelectList(Enum.GetValues(typeof(Gender))), "Select Gender", new
+                                        {
+                                            @class = "form-control"
+                                        })
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group m-0 d-flex">
+                            @Html.ActionLink("Home", "Index", null, new
+                            {
+                                @class = "btn btn-primary mr-auto"
+                            })
+                            <input type="submit" value="Add" class="btn btn-success ml-auto" />
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

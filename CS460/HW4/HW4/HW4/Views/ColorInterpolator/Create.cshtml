@@ -1,0 +1,90 @@
+﻿@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Interpolate from one color to another</h2>
+<p>
+    Please enter colors in HTML hexadecimal format: #AABBCC
+</p>
+
+<div class="container-fluid">
+    <div class="row d-flex justify-content-center">
+        <div class="col-lg-4">
+            @using (Html.BeginForm("Create", "ColorInterpolator", FormMethod.Post))
+            {
+                <div class="form-group">
+                    @Html.Label("startingColor", "Starting Color")
+                    @Html.TextBox("startingColor", null, new 
+                    { 
+                        @class = "form-control", 
+                        type = "text", 
+                        pattern = "^#(?:[0-9A-F]{3}){1,2}$", 
+                        required="required", 
+                        oninvalid="this.setCustomValidity('Please use requested format: (#AABBCC)')", 
+                        oninput="this.setCustomValidity('')" 
+                    })
+                </div><!--/form-group-->
+                <div class="form-group">
+                    @Html.Label("endingColor", "Ending Color")
+                    @Html.TextBox("endingColor", null, new 
+                    { 
+                        @class = "form-control", 
+                        type = "text", 
+                        pattern = "^#(?:[0-9A-F]{3}){1,2}$", 
+                        required="required",
+                        oninvalid="this.setCustomValidity('Please use requested format: (#AABBCC)')", 
+                        oninput="this.setCustomValidity('')" 
+                    })
+                </div><!--/form-group-->
+                <div class="form-group">
+                    @Html.Label("numberOfRows", "Number of Rows")
+                    @Html.TextBox("numberOfRows", null, new 
+                    { 
+                        @class = "form-control", 
+                        type = "number", 
+                        min="2",
+                        required="required",
+                        oninput="this.setCustomValidity('')" 
+                    })
+                </div><!--/form-group-->
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary">
+                        Submit
+                    </button>
+                </div><!--/form-group-->
+            }
+        </div><!--col-->
+        <div class="col-lg-4">
+            @if (ViewBag.Success == true)
+            {
+            <table class="table">
+                <tr>
+                    <th>
+                        Hex Value
+                    </th>
+                    <th>
+                        Color
+                    </th>
+                </tr>
+                @for(int i = 0; i < ViewBag.numberOfRows; i++)
+                {
+                    <tr>
+                        <td>
+                            @ViewBag.list[i]
+                        </td>
+                        <td style="background-color: @ViewBag.list[i]">
+
+                        </td>
+                    </tr>
+                }
+            </table>
+            }
+            @if(ViewBag.success == false)
+            {
+                <h3>
+                    Whoops! Something went wrong processing your request.
+                </h3>
+            }
+        </div><!--/col-->
+    </div><!--/row-->
+</div><!--/container-fluid-->
